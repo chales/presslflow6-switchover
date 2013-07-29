@@ -23,8 +23,8 @@
 
 
 # Download and unpack the latest Pressflow archive from Github.
-curl -C - -o master.tar.gz https://nodeload.github.com/pressflow/6/tar.gz/master
-tar -zxvf master.tar.gz
+curl -Lk -o master.zip https://github.com/pressflow/6/archive/master.zip
+unzip master.zip
 
 # Use rsync to sync files and remove extras that would be orphaned. Exclude
 # .svn directories in case we are under SVN version control.
@@ -40,10 +40,10 @@ rsync -avzpP --delete --exclude '.svn' 6-master/themes ./
 
 # Skip any customized files. You certainly don't want to overwrite /sites
 #mv pressflow/.htaccess ./
-#rsync -avzpP pressflow/sites ./
+#rsync -avzpP 6-master/sites ./
 
 # Cleanup
-rm -r 6-master master.tar.gz
+rm -r 6-master master.zip
 
 # If you have drush installed you may want to run the database update command.
 #drush updatedb -y
