@@ -13,7 +13,7 @@
 # $ cp /path/to/pressflow6-switchover.sh /path/to/drupal
 # $ ./path/to/drupal/pressflow6-switchover.sh
 #
-# First the scritp pulls down the latest Pressflow archive from Github.
+# First the script pulls down the latest Pressflow archive from Github.
 #
 # Then it uses rsync to overwrite the existing core files. This is made SVN safe
 # by the exclusion of .svn directories from the sync.
